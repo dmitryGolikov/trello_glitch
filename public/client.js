@@ -11,7 +11,6 @@ window.TrelloPowerUp.initialize(
       return t.card('all').then(function(card){
         console.log(card);
         if(card && card.customFieldItems) {
-          card.customFieldItems.forEach()
           var allDate;
           var listDate;
           for (let index = 0; index < card.customFieldItems.length - 1; index++) {
