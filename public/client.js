@@ -13,7 +13,7 @@ window.TrelloPowerUp.initialize(
         if(card && card.customFieldItems) {
           var allDate;
           var listDate;
-          for (let index = 0; index < card.customFieldItems.length - 1; index++) {
+          for (let index = 0; index < card.customFieldItems.length; index++) {
               var field = card.customFieldItems[index];
               if(field.idCustomField === "620ea17bc671633d435c9c8f")
                 allDate = field.value;
@@ -30,8 +30,8 @@ window.TrelloPowerUp.initialize(
               return 'green';
             return 'yellow';
           }
-          var daysLagAll = lagDays(allDate);
-          var daysLagList = lagDays(listDate);
+          var daysLagAll = lagDays(new Date(allDate.date));
+          var daysLagList = lagDays(new Date(listDate.date));
         }
         return [{
           text: 'Карте ' + daysLagAll + ' дней',
