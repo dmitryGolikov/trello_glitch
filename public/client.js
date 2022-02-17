@@ -14,7 +14,7 @@ window.TrelloPowerUp.initialize(
           var allDate;
           var listDate;
           for (let index = 0; index < card.customFieldItems.length - 1; index++) {
-              var field = card.customFieldItems[i];
+              var field = card.customFieldItems[index];
               if(field.idCustomField === "620ea17bc671633d435c9c8f")
                 allDate = field.value;
               if(field.idCustomField === "620ea19d65070d0323088724")
