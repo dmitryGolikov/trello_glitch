@@ -3,8 +3,11 @@
 
 // by default, you've got jQuery,
 // add other scripts at the bottom of index.html
+console.log('hello world');
 
-$(function() {
-  console.log('hello world :o');
-    
-});
+window.TrelloPowerUp.initialize(
+  {
+    'card-badges': function(t, opts) {
+      return []
+    }
+  });
