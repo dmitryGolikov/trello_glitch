@@ -1,62 +1,28 @@
 {
-  "name": "trello_glitch",
-  "version": "1.0.0",
-  "description": "test trello api",
-  "main": "index.js",
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "my-trello_glitch-app",
+  "version": "0.0.1",
+  "description": "What am I about?",
+  "main": "server.js",
   "scripts": {
-    "build": "parcel build src/html/*.html",
-    "lint": "eslint src"
+    "start": "node server.js"
   },
   "dependencies": {
-    "bent": "^7.3.12",
-    "jsonwebtoken": "^8.5.1"
+    "express": "^4.15.2",
+    "jquery": "*"
   },
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.28.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-prettier": "^3.4.0",
-    "eslint-plugin-react": "^7.24.0",
-    "parcel-bundler": "^1.12.5",
-    "parcel-plugin-interpolate-env": "^0.0.1",
-    "parcel-plugin-static-files-copy": "^2.6.0",
-    "prettier": "^2.3.1"
-  },
-  "eslintConfig": {
-    "env": {
-      "browser": true
-    },
-    "extends": [
-      "airbnb/base",
-      "plugin:prettier/recommended"
-    ],
-    "parser": "babel-eslint",
-    "plugins": [
-      "prettier"
-    ]
-  },
-  "prettier": {
-    "printWidth": 100,
-    "singleQuote": true,
-    "trailingComma": "es5"
-  },
-  "staticFiles": {
-    "staticPath": [
-      "src/images",
-      "src/strings"
-    ]
+  "engines": {
+    "node": "6.10.x"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dmitryGolikov/trello_glitch.git"
+    "url": "https://glitch.com/edit/#!/welcome-project"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dmitryGolikov/trello_glitch/issues"
-  },
-  "homepage": "https://github.com/dmitryGolikov/trello_glitch#readme"
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
 }
