@@ -21,7 +21,7 @@ window.TrelloPowerUp.initialize(
                 listDate = field.value;
           }
           var lagDays = (date2) => {
-            return Math.ceil(Math.abs(date2.getTime() - Date.now().getTime()) / (1000 * 3600 * 24))
+            return Math.ceil(Math.abs(date2.getTime() - Date.now()) / (1000 * 3600 * 24))
           }
           var getColor = (days) => {
             if(days > 15)
