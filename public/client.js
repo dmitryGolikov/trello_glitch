@@ -30,16 +30,24 @@ window.TrelloPowerUp.initialize(
               return 'green';
             return 'yellow';
           }
-          var daysLagAll = lagDays(new Date(allDate.date));
-          var daysLagList = lagDays(new Date(listDate.date));
+          
+          var newbages = [];
+          if(allDate) {
+            var daysLagAll = lagDays(new Date(allDate.date));
+            newbages.push({
+              text: 'Карте ' + daysLagAll + ' дней',
+              color: getColor(daysLagAll),          
+            });
+          }
+          if(listDate) {
+            var daysLagList = lagDays(new Date(listDate.date));
+            newbages.push({
+              text: "В этом листе: " + daysLagList + ' дней',
+              color: getColor(daysLagList),          
+            })
+          }
         }
-        return [{
-          text: 'Карте ' + daysLagAll + ' дней',
-          color: getColor(daysLagAll),          
-        }, {
-          text: "В этом листе: " + daysLagList + ' дней',
-          color: getColor(daysLagList),          
-        }]
+        return newbages
       });
     }
   });
