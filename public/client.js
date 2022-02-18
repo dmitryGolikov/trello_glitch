@@ -3,13 +3,13 @@
 
 // by default, you've got jQuery,
 // add other scripts at the bottom of index.html
-console.log('hello world');
+console.log('trello web reports started');
 
 window.TrelloPowerUp.initialize(
   {
     'card-badges': function(t, opts) {
       return t.card('all').then(function(card){
-        //console.log(card);
+        console.log(card);
         if(card && card.customFieldItems) {
           var allDate;
           var listDate;
@@ -43,11 +43,11 @@ window.TrelloPowerUp.initialize(
             var daysLagList = lagDays(new Date(listDate.date));
             newbages.push({
                 dynamic: function () {
-                return { 
-                  text: "В этом листе: " + daysLagList + ' дней',
-                  color: getColor(daysLagList),
-                  refresh: 30,
-                }
+                  return { 
+                    text: "В этом листе: " + daysLagList + ' дней',
+                    color: getColor(daysLagList),
+                    refresh: 30,
+                  }
               }
             })
           }
