@@ -9,15 +9,15 @@ window.TrelloPowerUp.initialize(
   {
     'card-badges': function(t, opts) {
       return t.card('all').then(function(card){
-        console.log(card);
+        //console.log(card);
         if(card && card.customFieldItems) {
           var allDate;
           var listDate;
           for (let index = 0; index < card.customFieldItems.length; index++) {
               var field = card.customFieldItems[index];
-              if(field.idCustomField === "620ea17bc671633d435c9c8f")
+              if(field.idCustomField === "620ea17bc671633d435c9c8f" || field.idCustomField === "620ba55759d9fd4f40585b6b")
                 allDate = field.value;
-              if(field.idCustomField === "620ea19d65070d0323088724")
+              if(field.idCustomField === "620ea19d65070d0323088724" || field.idCustomField === "620ea19d65070d0323088724")
                 listDate = field.value;
           }
           var lagDays = (date2) => {
