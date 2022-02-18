@@ -17,7 +17,7 @@ window.TrelloPowerUp.initialize(
               var field = card.customFieldItems[index];
               if(field.idCustomField === "620ea17bc671633d435c9c8f" || field.idCustomField === "620ba55759d9fd4f40585b6b")
                 allDate = field.value;
-              if(field.idCustomField === "620ea19d65070d0323088724" || field.idCustomField === "620ea19d65070d0323088724")
+              if(field.idCustomField === "620ea19d65070d0323088724" || field.idCustomField === "620e53701b332d5d922fdc30")
                 listDate = field.value;
           }
           var lagDays = (date2) => {
