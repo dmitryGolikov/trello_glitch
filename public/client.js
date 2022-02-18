@@ -26,7 +26,7 @@ window.TrelloPowerUp.initialize(
           var getColor = (days) => {
             if(days > 15)
               return 'red';
-            if(days > 5)
+            if(days < 5)
               return 'green';
             return 'yellow';
           }
@@ -37,7 +37,7 @@ window.TrelloPowerUp.initialize(
           text: 'Карте ' + daysLagAll + ' дней',
           color: getColor(daysLagAll),          
         }, {
-          text: "В этом листе:" + daysLagList + ' дней',
+          text: "В этом листе: " + daysLagList + ' дней',
           color: getColor(daysLagList),          
         }]
       });
