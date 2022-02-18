@@ -42,8 +42,13 @@ window.TrelloPowerUp.initialize(
           if(listDate) {
             var daysLagList = lagDays(new Date(listDate.date));
             newbages.push({
-              text: "В этом листе: " + daysLagList + ' дней',
-              color: getColor(daysLagList),          
+                dynamic: function () {
+                return { 
+                  text: "В этом листе: " + daysLagList + ' дней',
+                  color: getColor(daysLagList),
+                  refresh: 30,
+                }
+              }
             })
           }
         }
