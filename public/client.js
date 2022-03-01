@@ -32,17 +32,18 @@ window.TrelloPowerUp.initialize(
           }
           
           var newbages = [];
-          if(allDate) {
-            var daysLagAll = lagDays(new Date(allDate.date));
+          var daysLagAll = allDate && lagDays(new Date(allDate.date));
+          if(daysLagAll && daysLagAll > 5) {
             newbages.push({
-              text: 'Карте ' + daysLagAll + ' дней',
+              text: daysLagAll,
+              icon: "./images/date.svg",
               color: getColor(daysLagAll),          
             });
           }
-          if(listDate) {
-            var daysLagList = lagDays(new Date(listDate.date));
+          var daysLagList = listDate && lagDays(new Date(listDate.date));
+          if(daysLagList && daysLagList > 3) {
             newbages.push({
-              text: "В этом листе: " + daysLagList + ' дней',
+              text: "List: " + daysLagList,
               color: getColor(daysLagList),
             })
           }
