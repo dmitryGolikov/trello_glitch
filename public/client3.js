@@ -62,7 +62,7 @@
             return t.get(cardId, "shared", "timeInListDataVersion", null).then(function(dataVersion) {
                 return 1 !== dataVersion ? null : t.get(cardId, "shared", "timesByListCardId", null).then(function(tilCardId) {
                     return tilCardId == cardId ? t.get(cardId, "shared", "timesByList", null) : Promise$1.resolve(null)
-                }).catch(function(e) {
+                }).catch(function(e) { debugger;
                 })
             })
         },
@@ -111,7 +111,7 @@
                 return t.get("board", "shared", "weekendMode", "SHOW").then(function(weekendMode) {
                     return cardTimeEnteredList && cardTimeEnteredList[listId] ? getDuration(cardTimeEnteredList[listId], (new Date).getTime(), weekendMode) : null
                 })
-            }).catch(function(e) {
+            }).catch(function(e) { debugger;
             })
         },
         Promise$2 = TrelloPowerUp.Promise,
@@ -119,7 +119,7 @@
             return t.get(cardId, "shared", "timeOnBoardDataVersion", null).then(function(dataVersion) {
                 return 1 !== dataVersion ? null : t.get(cardId, "shared", "timesOnBoardCardId", null).then(function(tilCardId) {
                     return tilCardId == cardId ? t.get(cardId, "shared", "timeOnBoard", null) : Promise$2.resolve(null)
-                }).catch(function(e) {
+                }).catch(function(e) { debugger;
                 })
             })
         },
@@ -138,7 +138,7 @@
                 return t.get("board", "shared", "weekendMode", "SHOW").then(function(weekendMode) {
                     return cardTimeEnteredBoard && cardTimeEnteredBoard[boardId] ? getDuration(cardTimeEnteredBoard[boardId], (new Date).getTime(), weekendMode) : null
                 })
-            }).catch(function(e) {
+            }).catch(function(e) { debugger;
             })
         },
         Promise$3 = TrelloPowerUp.Promise,
@@ -156,7 +156,7 @@
                         }
                     }).then(function(badge) {
                         return badge;
-                    }).catch(function(e) {
+                    }).catch(function(e) { debugger;
                     })
                 }
             }
@@ -177,7 +177,7 @@
                             }
                         }).then(function(badge) {
                             return badge;
-                        }).catch(function(e) {
+                        }).catch(function(e) { debugger;
                         })
                     })
                 }
@@ -200,7 +200,7 @@
                 return listsIgnored && listsIgnored[card.idList] ? isCardDetail || (timeInListBadge.dynamic(t), ret.push({
                     refresh: 60
                 })) : (ret.push(timeInListBadge), showTimeOnBoard && ret.push(getTimeOnBoardBadge(t, card))), ret
-            }).catch(function(e) {
+            }).catch(function(e) { debugger;
             })
         };
     TrelloPowerUp.initialize({
