@@ -63,7 +63,6 @@
                 return 1 !== dataVersion ? null : t.get(cardId, "shared", "timesByListCardId", null).then(function(tilCardId) {
                     return tilCardId == cardId ? t.get(cardId, "shared", "timesByList", null) : Promise$1.resolve(null)
                 }).catch(function(e) {
-                    bugsnagClient.notify(e)
                 })
             })
         },
@@ -113,7 +112,6 @@
                     return cardTimeEnteredList && cardTimeEnteredList[listId] ? getDuration(cardTimeEnteredList[listId], (new Date).getTime(), weekendMode) : null
                 })
             }).catch(function(e) {
-                bugsnagClient.notify(e)
             })
         },
         Promise$2 = TrelloPowerUp.Promise,
@@ -122,7 +120,6 @@
                 return 1 !== dataVersion ? null : t.get(cardId, "shared", "timesOnBoardCardId", null).then(function(tilCardId) {
                     return tilCardId == cardId ? t.get(cardId, "shared", "timeOnBoard", null) : Promise$2.resolve(null)
                 }).catch(function(e) {
-                    bugsnagClient.notify(e)
                 })
             })
         },
@@ -142,7 +139,6 @@
                     return cardTimeEnteredBoard && cardTimeEnteredBoard[boardId] ? getDuration(cardTimeEnteredBoard[boardId], (new Date).getTime(), weekendMode) : null
                 })
             }).catch(function(e) {
-                bugsnagClient.notify(e)
             })
         },
         Promise$3 = TrelloPowerUp.Promise,
@@ -159,13 +155,8 @@
                             icon: "./images/days-on-board.svg"
                         }
                     }).then(function(badge) {
-                        return getStatus(t).then(function(status) {
-                            return status && status.boardTracked && (status.subscriptionActive || status.trialActive) ? badge : {
-                                refresh: 10
-                            }
-                        })
+                        return badge;
                     }).catch(function(e) {
-                        bugsnagClient.notify(e)
                     })
                 }
             }
@@ -185,13 +176,8 @@
                                 color: void 0
                             }
                         }).then(function(badge) {
-                            return getStatus(t).then(function(status) {
-                                return status && status.boardTracked && (status.subscriptionActive || status.trialActive) ? badge : {
-                                    refresh: 10
-                                }
-                            })
+                            return badge;
                         }).catch(function(e) {
-                            bugsnagClient.notify(e)
                         })
                     })
                 }
@@ -215,7 +201,6 @@
                     refresh: 60
                 })) : (ret.push(timeInListBadge), showTimeOnBoard && ret.push(getTimeOnBoardBadge(t, card))), ret
             }).catch(function(e) {
-                bugsnagClient.notify(e)
             })
         };
     TrelloPowerUp.initialize({
