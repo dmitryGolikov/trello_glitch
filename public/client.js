@@ -4,12 +4,19 @@
 // by default, you've got jQuery,
 // add other scripts at the bottom of index.html
 console.log('trello web reports started');
+const listIds = {
+  'Testing': '58735bddc824d3f3179ea6c1',
+  'InProgress': '58735bd1f5ecaca255d54d01',
+  'RewiewAndSync': '59a91ae4e38407a4f1d37811'
+}
 
 window.TrelloPowerUp.initialize(
   {
     'card-badges': function(t, opts) {
       return t.card('all').then(function(card){
-        //console.log(card);
+        //console.log(card);        
+        if(!card.idList || !Object.values().some(x => x === card.idList))
+          return;
         if(card && card.customFieldItems) {
           var allDate;
           var listDate;
@@ -30,8 +37,7 @@ window.TrelloPowerUp.initialize(
               return 'green';
             return 'yellow';
           }
-          
-          var newbages = [];
+          var newbages = []; 
           var daysLagAll = allDate && lagDays(new Date(allDate.date));
           if(daysLagAll && daysLagAll > 5) {
             newbages.push({
