@@ -14,9 +14,10 @@ window.TrelloPowerUp.initialize(
   {
     'card-badges': function(t, opts) {
       return t.card('all').then(function(card){
-        //console.log(card);        
-        if(!card.idList || !Object.values().some(x => x === card.idList))
-          return;
+        //console.log(card);
+        var newbages = []; 
+        if(!card.idList || !Object.values(listIds).some(x => x === card.idList))
+          return [];
         if(card && card.customFieldItems) {
           var allDate;
           var listDate;
@@ -37,7 +38,6 @@ window.TrelloPowerUp.initialize(
               return 'green';
             return 'yellow';
           }
-          var newbages = []; 
           var daysLagAll = allDate && lagDays(new Date(allDate.date));
           if(daysLagAll && daysLagAll > 5) {
             newbages.push({
